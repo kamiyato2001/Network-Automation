@@ -31,7 +31,7 @@ tn.write(b"router-id 2.2.2.2\n")
 tn.write(b"int loop 1\n")
 tn.write(b"ip ospf 100 a 0\n")
 
-tn.write("int e1/0\n")
+tn.write(b"int e1/0\n")
 tn.write(b"ip ospf 100 a 0\n")
 
 #Saving configuration
