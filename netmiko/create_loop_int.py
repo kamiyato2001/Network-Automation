@@ -1,8 +1,8 @@
-from netmiko import ConnectHandler  
+from netmiko import ConnectHandler
 
 dev_info = {
     'device_type' : 'cisco_ios',
-    'ip' : '192.168.1.3',
+    'ip' : '192.168.122.31',
     'username' : 'john',
     'password' : 'cisco',
     'secret' : 'ccna'
@@ -14,8 +14,6 @@ output = ssh.enable()
 print(output)
 ssh.config_mode()
 com_list = ['int loop 1' , 'ip add 1.1.1.1 255.255.255.255', 'exit']
-output = ssh.send_command('int loop 0')
-output = ssh.send_command('ip add 1.1.1.2 255.255.255.255')
-output = ssh.send_command('exit')
+output = ssh.send_config_set(com_list)
 print(output)
 ssh.disconnect()
